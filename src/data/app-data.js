@@ -16,15 +16,15 @@ export const headerNavaData = [
         Icon: PeopleIcon
     },
     {
-        title: 'home',
+        title: 'jobs',
         Icon: BusinessCenterIcon
     },
     {
-        title: 'home',
+        title: 'messaging',
         Icon: MessageIcon
     },
     {
-        title: 'home',
+        title: 'notification',
         Icon: NotificationsIcon
     },
     {

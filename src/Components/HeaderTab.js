@@ -1,9 +1,11 @@
 import React from 'react'
+import './HeaderTab.css'
 
 const HeaderTab = ({title, Icon}) => {
     return (
-        <div className='headerTabs'>
-            <Icon className='headerTabs__icon' />
+        <div className='headerTab'>
+            <Icon className='headerTab__icon' />
+            <p>{title}</p>
         </div>
     )
 }
