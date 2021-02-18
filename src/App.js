@@ -1,9 +1,10 @@
 import './App.css';
+import HeaderNav from './Components/HeaderNav'
 
 function App() {
   return (
     <div className="App">
-     <h1>BUILDING THE LINKEDIN CLONE</h1>
+      <HeaderNav />
     </div>
   );
 }
