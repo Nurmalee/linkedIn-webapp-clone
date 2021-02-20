@@ -1,0 +1,98 @@
+.post {
+    flex: 0.5;
+    margin: 70px 20px;
+    color: #777;
+}
+
+.post__topContents {
+    background-color: white;
+    padding: 15px 20px 0 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.post__input {
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10cm;
+    /* border-top-left-radius: 10px; */
+}
+
+.post__input input {
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    flex: 1;
+    cursor: pointer;
+}
+
+.post__input:hover {
+    background-color: #ddd;
+}
+
+.post__input:hover input {
+    background-color: #ddd;
+}
+
+.post__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.post__button {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post__topContents .post__button:first-child .post__button-Icon {
+    color: skyblue;
+}
+
+.post__topContents .post__button:nth-child(2) {
+    color: orange;
+}
+
+.post__topContents .post__button:nth-child(3) {
+    color: #ccc;
+}
+
+.post__topContents .post__button:nth-child(4) {
+    color: brown;
+}
+
+.post__button h3 {
+    font-size: 12px;
+    margin-left: 5px;
+    font-weight: 700;
+    color: #777;
+}
+
+.post__button:hover {
+    background-color: #eee;
+}
+
+.post__input form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.post__input-form {
+    width: 100%;
+}
+
+.post__body {
+    margin-top: 15px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}

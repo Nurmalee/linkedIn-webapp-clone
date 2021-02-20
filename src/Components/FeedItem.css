@@ -1,0 +1,103 @@
+.feedItem {
+    padding-top: 20px;
+    margin-top: 5px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    overflow-wrap: anywhere;
+}
+
+.feedItem__textInput {
+    padding: 10px;
+    font-size: 12px;
+    text-align: justify;
+}
+
+.feedItem__Icons {
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+    border-top: 1px solid #ccc;
+    margin: 0 10px;
+}
+
+.feedItem__Icons .post__button .post__button-Icon {
+    height: 23px !important;
+    width: 23px !important;
+}
+
+.feedItem__Icons .post__button h3 {
+    font-weight: 600;
+}
+
+.feedItem__firstToComment {
+    font-size: 11px;
+    padding: 12px;
+    background-color: rgb(230, 230, 230);
+    color: black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+}
+
+.feedItem__delete {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.feedItem__delete h3 {
+    font-size: 12px;
+    margin-left: 5px;
+    font-weight: 600;
+    color: #777;
+}
+
+.feedItem__delete:hover {
+    background-color: #eee;
+}
+
+.feedItem__likesComments {
+    padding: 10px;
+    padding-top: 5px;
+    font-size: 11px;
+    color: black;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #999;
+}
+
+.feedItem__likeIcon {
+    height: 12px !important;
+    width: 12px !important;
+    color: darkred;
+}
+
+.feedItem__header {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.feedItem__header-title {
+    font-size: 13px;
+}
+
+.feedItem__header-pics {
+    margin-right:10px;
+}
+
+.feedItem__header-title p:first-child {
+    font-weight: 700;
+}
+
+.feedItem__header-title p:nth-child(2) {
+    font-size: 10px;
+    padding-top: 5px;
+    color: #aaa;
+}
