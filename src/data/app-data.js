@@ -6,6 +6,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import AppsIcon from '@material-ui/icons/Apps';
 import Avatar from '@material-ui/core/Avatar';
 
+
 export const headerNavaData = [
     {
         title: 'home',
@@ -29,7 +30,7 @@ export const headerNavaData = [
     },
     {
         title: 'me',
-        Icon: Avatar
+        Avatar
     },
     {
         title: 'work',

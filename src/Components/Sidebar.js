@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Sidebar.css';
 import Avatar from '@material-ui/core/Avatar';
 import LabelImportantIcon from '@material-ui/icons/LabelImportant';
+// import nurmalee_pics from '../app-logo/nurmalee__linkedIn.jpg';
 
 const Sidebar = () => {
 
@@ -26,29 +27,29 @@ const Sidebar = () => {
 
     return (
         <section className='sidebar'>
-            <div className="sidebar__profile">
-                <div className="sidebar__profile-banner"></div>
-                <Avatar src='' className="sidebar__profile-pics" />
+            <div className='sidebar__profile'>
+                <div className='sidebar__profile-banner'></div>
+                <Avatar src='https://avatars.githubusercontent.com/u/70635657?s=460&u=eea4bb2b6dff02e5993458cecc93018eca3bd17d&v=4' className='sidebar__profile-pics' />
                 <h3>Nurudeen Lawal</h3>
                 <p>Software Engineer (Full-stack Developer, Graphic Designer, Creative/Pencil Artist)</p>
             </div>
 
             <div className="sidebar__views">
-                {sidebarItem("Who viewed your profile", (profileViews))}
-                {sidebarItem("Views of your post", (viewPost))}
-                {sidebarItem(<LabelImportantIcon />, "My items")}
+                {sidebarItem('Who viewed your profile', (profileViews))}
+                {sidebarItem('Views of your post', (viewPost))}
+                {sidebarItem(<LabelImportantIcon />, 'My items')}
             </div>
 
             <div className="sidebar__recent">
                 <h3>Recent</h3>
-                {sidebarItem("#", "reactjs")}
-                {sidebarItem("#", "vuejs")}
-                {sidebarItem("#", "webDesignUi")}
-                {sidebarItem("#", "reactWeDdeveloper")}
-                {sidebarItem("#", "javaScript")}
-                {sidebarItem("#", "reactContextAPI")}
-                {sidebarItem("#", "reactHooks")}
-                {sidebarItem("#", "useState")}
+                {sidebarItem('#', 'reactjs')}
+                {sidebarItem('#', 'vuejs')}
+                {sidebarItem('#', 'webDesignUi')}
+                {sidebarItem('#', 'reactWeDdeveloper')}
+                {sidebarItem('#', 'javaScript')}
+                {sidebarItem('#', 'reactContextAPI')}
+                {sidebarItem('#', 'reactHooks')}
+                {sidebarItem('#', 'useState')}
                 <h3>See all</h3>
                 <h3>Discover more</h3>
             </div>
