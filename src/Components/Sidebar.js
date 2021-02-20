@@ -5,6 +5,16 @@ import LabelImportantIcon from '@material-ui/icons/LabelImportant';
 
 const Sidebar = () => {
 
+    const [profileViews, setProfileViews] = useState(null);
+    const [viewPost, setViewPost] = useState(null);
+
+    useEffect(() => {
+        const viewsNumber = Math.floor(Math.random() * 999);
+        const postsNumber = Math.floor(Math.random() * 9999);
+        setProfileViews(viewsNumber)
+        setViewPost(postsNumber)
+    }, [])
+
     const sidebarItem = (item1, item2) => {
         return (
             <div className="views">
@@ -24,8 +34,8 @@ const Sidebar = () => {
             </div>
 
             <div className="sidebar__views">
-                {sidebarItem("Who viewed your profile", 5000)}
-                {sidebarItem("Views of your post", 5000)}
+                {sidebarItem("Who viewed your profile", (profileViews))}
+                {sidebarItem("Views of your post", (viewPost))}
                 {sidebarItem(<LabelImportantIcon />, "My items")}
             </div>
 
