@@ -2,6 +2,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
   font-weight: 400;
+}
+
+.app__content {
+  display: flex;
+  padding: 10px 3em;
+  width: 1200px;
+  /* align-items: center; */
+  margin: 0 auto;
 }
