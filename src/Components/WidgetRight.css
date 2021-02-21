@@ -79,7 +79,7 @@
     background-color: white;
     position: sticky;
     top: 70px;
-    width: max-content;
+    /* width: max-content; */
 }
 
 .widget__adverts img {

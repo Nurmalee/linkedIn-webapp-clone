@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './WidgetRight.css';
 import Avatar from '@material-ui/core/Avatar';
 import js_logo from '../app-logo/javascript-logo.png';
 import react_logo from '../app-logo/react-logo.png';
 import sass_logo from '../app-logo/sass-logo.png';
-import linked_ads from '../app-logo/linkedIn__jobs-ads.jpg';
+import { widgetAdsPics } from '../data/app-data';
+// import linked_ads from '../app-logo/linkedIn__jobs-ads.jpg';
 
 const WidgetRight = () => {
+    const [widgetAd, setWidgetAd] = useState('')
+    
+    useEffect(() => {
+        let randomAdPic = setInterval(() => {
+            setWidgetAd(widgetAdsPics[Math.floor(Math.random() * 5)])
+        }, 6000);
+        return () => {
+            clearInterval(randomAdPic)
+        }
+    }, [])
 
     const followSuggestions = (Icon, name, companyType, logo_src) => {
         return (
@@ -31,7 +42,7 @@ const WidgetRight = () => {
                 <button> View all recommendations </button>
             </div>
             <div className='widget__adverts'>
-                <img src={linked_ads} alt='linkedIn-ads'/>
+                <img src={widgetAd} alt='linkedIn-ads'/>
             </div>
             
         </section>
