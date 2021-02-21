@@ -16,7 +16,7 @@ const Feed = () => {
     }, [feed])
 
     useEffect(() => {
-        projectFirestore.collection('feed').onSnapshot(snap => {
+        projectFirestore.collection('feed').orderBy('createdAt', 'desc').onSnapshot(snap => {
             setFeed(snap.docs.map(doc => ({id: doc.id, data: doc.data()})))
         })
     }, [])
