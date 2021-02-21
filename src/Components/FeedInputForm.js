@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './FeedInputForm.css';
 import CreateIcon from '@material-ui/icons/Create';
 import firebase from 'firebase';
-import { projectFirestore } from '../Config/firebase';
+import projectFirestore from '../Config/firebase';
 
 const FeedInputForm = () => {
     const [input, setInput] = useState('');

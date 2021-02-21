@@ -10,7 +10,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import Avatar from '@material-ui/core/Avatar';
 // import Comments from './Comments.js'
 
-const FeedItem = ({text, postButton, handleFeedDelete, id}) => {
+const FeedItem = ({text, postButton, handleFeedDelete, createdAt, id}) => {
     const [likes, setLikes] = useState(null);
     const [showLikes, setShowLikes] = useState(false);
     // const [showCommentBox, setShowCommentBox] = useState(false);
@@ -35,6 +35,7 @@ const FeedItem = ({text, postButton, handleFeedDelete, id}) => {
                 <div className="feedItem__header-title">
                     <p>Nurmalee The Best</p>
                     <p>IT Support Specialist | Network Engineer | Cyber Security Analyst</p>
+                    <p>{new Date(createdAt?.toDate()).toUTCString()} </p>
                 </div>
             </div>
 
