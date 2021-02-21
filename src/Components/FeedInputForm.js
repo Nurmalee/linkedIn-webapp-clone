@@ -11,13 +11,13 @@ const FeedInputForm = () => {
     const handleFeedUpdate = (e) => {
         e.preventDefault();
         if(input){
-            // const newFeed = [{input, id: new Date().getTime().toString()} ,...feed]
             projectFirestore.collection('feed').add({
+                name: 'Lawal Nurudeen',
                 text: input,
                 createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                id: new Date().getTime().toString(),
+                photoId: '',
+                // id: new Date().getTime().toString(),
             })
-            // setFeed(newFeed);
             setInput("");
         }
     }

@@ -5,12 +5,11 @@ import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
 import CommentOutlinedIcon from '@material-ui/icons/CommentOutlined';
 import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined';
 import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
-import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Avatar from '@material-ui/core/Avatar';
 // import Comments from './Comments.js'
 
-const FeedItem = ({text, postButton, handleFeedDelete, createdAt, id}) => {
+const FeedItem = ({name, text, postButton, createdAt, photoId, id}) => {
     const [likes, setLikes] = useState(null);
     const [showLikes, setShowLikes] = useState(false);
     // const [showCommentBox, setShowCommentBox] = useState(false);
@@ -31,9 +30,9 @@ const FeedItem = ({text, postButton, handleFeedDelete, createdAt, id}) => {
     return (
         <section className='feedItem'>
             <div className="feedItem__header">
-                <Avatar src='' className="feedItem__header-pics"/>
+                <Avatar src='https://avatars.githubusercontent.com/u/70635657?s=460&u=eea4bb2b6dff02e5993458cecc93018eca3bd17d&v=4' className="feedItem__header-pics"/>
                 <div className="feedItem__header-title">
-                    <p>Nurmalee The Best</p>
+                    <p>{name ?? 'Anonymous Sender'}</p>
                     <p>IT Support Specialist | Network Engineer | Cyber Security Analyst</p>
                     <p>{new Date(createdAt?.toDate()).toUTCString()} </p>
                 </div>
@@ -54,10 +53,6 @@ const FeedItem = ({text, postButton, handleFeedDelete, createdAt, id}) => {
                 </div>
                 {postButton((ShareOutlinedIcon), "Share")}
                 {postButton((SendOutlinedIcon), "Send")}
-                <div className="feedItem__delete" onClick={() => handleFeedDelete(id)}>
-                    <DeleteOutlineOutlinedIcon />
-                    <h3>delete</h3>
-                </div>
             </div>
 
             {/* {showCommentBox && <Comments /> } */}

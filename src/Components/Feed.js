@@ -16,17 +16,10 @@ const Feed = () => {
     }, [feed])
 
     useEffect(() => {
-        projectFirestore.collection('feed').orderBy('createdAt', 'desc').onSnapshot(snap => {
-            setFeed(snap.docs.map(doc => ({id: doc.id, data: doc.data()})))
+        projectFirestore.collection('feed').orderBy('createdAt', 'desc').onSnapshot(async(snap) => {
+            await setFeed(snap.docs.map(doc => ({id: doc.id, data: doc.data()})))
         })
     }, [])
-
-
-    const handleFeedDelete = (id) => {
-        const newFeed = feed.filter(feedItem => feedItem.id !== id)
-        console.log(newFeed.length);
-        setFeed(newFeed);
-    }
 
     const postButton = (Icon, title) => {
         return (
@@ -51,9 +44,9 @@ const Feed = () => {
 
             <div className="post__body">
                 {feed.map(feedItem => {
-                    const {text, id, createdAt} = feedItem.data
+                    const {name, text, id, createdAt, photoId} = feedItem.data
                         return (
-                            <FeedItem text={text} postButton={postButton} handleFeedDelete={handleFeedDelete} createdAt={createdAt} id={id} key={id}/>
+                            <FeedItem name={name} text={text} postButton={postButton} photoId={photoId} createdAt={createdAt} id={id} key={id}/>
                         )
                     }
                 )}
