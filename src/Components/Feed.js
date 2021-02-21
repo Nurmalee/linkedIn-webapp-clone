@@ -6,7 +6,7 @@ import EventIcon from '@material-ui/icons/Event';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import FeedItem from './FeedItem';
 import FeedInputForm from './FeedInputForm';
-import projectFirestore from '../Config/firebase';
+import { projectFirestore } from '../Config/firebase';
 
 const Feed = () => {
     const [feed, setFeed] = useState([]);
@@ -24,6 +24,7 @@ const Feed = () => {
 
     const handleFeedDelete = (id) => {
         const newFeed = feed.filter(feedItem => feedItem.id !== id)
+        console.log(newFeed.length);
         setFeed(newFeed);
     }
 
