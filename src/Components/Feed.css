@@ -1,5 +1,6 @@
 .post {
     flex: 0.5;
+    width: 50%;
     margin: 70px 20px;
     color: #777;
 }

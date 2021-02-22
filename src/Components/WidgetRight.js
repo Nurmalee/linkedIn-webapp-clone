@@ -9,10 +9,10 @@ import { widgetAdsPics } from '../data/app-data';
 
 const WidgetRight = () => {
     const [widgetAd, setWidgetAd] = useState('')
-    
+
     useEffect(() => {
         let randomAdPic = setInterval(() => {
-            setWidgetAd(widgetAdsPics[Math.floor(Math.random() * 5)])
+            setWidgetAd(widgetAdsPics[Math.floor(Math.random() * widgetAdsPics.length)])
         }, 6000);
         return () => {
             clearInterval(randomAdPic)

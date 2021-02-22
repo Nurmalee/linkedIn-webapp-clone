@@ -20,9 +20,9 @@ const HeaderNav = () => {
 
                 <div className='headerNav__right'>
                     {
-                        headerNavaData.map(headerNavTab => {
+                        headerNavaData.map((headerNavTab, i) => {
                             return (
-                               <HeaderTabs {...headerNavTab} />
+                               <HeaderTabs key={i} {...headerNavTab} />
                             )
                         })
                     }

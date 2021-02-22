@@ -1,5 +1,6 @@
 .widget {
     flex: 0.3;
+    width: 30%;
     margin-top: 70px;
 }
 
