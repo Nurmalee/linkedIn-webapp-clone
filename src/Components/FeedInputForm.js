@@ -7,13 +7,11 @@ import EventIcon from '@material-ui/icons/Event';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import firebase from 'firebase';
 import { projectFirestore } from '../Config/firebase';
-import useStorage from '../hooks/useStorage'
+import ProgressBar from './ProgressBar'
 
 const FeedInputForm = ({postButton}) => {
     const [input, setInput] = useState('');
     const [imageFile, setImageFile] = useState(null);
-
-    const { uploadedImageUrl } = useStorage(imageFile)
    
 
     const imageTypes = ['image/png', 'image/jpeg', 'image/jpg']
@@ -25,7 +23,7 @@ const FeedInputForm = ({postButton}) => {
                 name: 'Lawal Nurudeen',
                 text: input,
                 createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                photoId: uploadedImageUrl,
+                // photoId: uploadedImageUrl,
             })
             setInput("");
         }
@@ -66,6 +64,7 @@ const FeedInputForm = ({postButton}) => {
             {postButton((EventIcon), "Event")}
             {postButton((AssignmentIcon), "Write Article")}
         </div>
+        {imageFile && <ProgressBar imageFile={imageFile} setImageFile={setImageFile} />}
         </>
     )
 }

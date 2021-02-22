@@ -1,0 +1,5 @@
+.progressBar {
+    height: 2px;
+    background: linear-gradient( to right, rgb(27, 111, 175), skyblue );
+    /* margin-top: 20px; */
+}
