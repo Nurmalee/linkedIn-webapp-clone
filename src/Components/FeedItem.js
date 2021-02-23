@@ -39,9 +39,12 @@ const FeedItem = ({name, text, postButton, createdAt, photoId, id}) => {
             </div>
 
             <p className="feedItem__textInput">{text}</p>
-            <div className="feedItem__imageU">
-                <img src={photoId} alt="uploadedImage"/>
-            </div>
+            
+            {photoId && 
+                <div className="feedItem__image">
+                    <img src={photoId} alt="uploadedImage"/>
+                </div>
+            }
 
             {showLikes && <h3 className="feedItem__likesComments"> <FavoriteIcon className="feedItem__likeIcon"/> {likes} . {comment} comments </h3>}
 

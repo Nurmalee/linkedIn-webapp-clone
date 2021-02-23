@@ -13,6 +13,11 @@
     text-align: justify;
 }
 
+.feedItem__image img{
+    object-fit: contain;
+    width: 100%;
+}
+
 .feedItem__Icons {
     display: flex;
     align-items: center;

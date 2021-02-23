@@ -38,9 +38,9 @@ const FeedInputForm = ({postButton}) => {
                     createdAt: firebase.firestore.FieldValue.serverTimestamp(),
                     photoId: uploadedImageUrl,
                 })
-                // setInput("");
-                // setUploadedImageUrl('')
             }
+            // setInput("");
+            // setImageFile(null)
         })
        
     }
