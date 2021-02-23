@@ -18,16 +18,26 @@
 .post__input-form {
     width: 100%;
     display: flex;
+    align-items: center;
 }
 
-.post__input input {
+.post__input-form > input[type="text"] {
     padding: 10px;
     height: 100%;
     width: 100%;
     border: none;
     outline: none;
-    flex: 1;
+    flex: 0.7;
     cursor: pointer;
+}
+
+.post__input-form > input[type="file"] {
+    flex: 0.3;
+    width: 100%;
+}
+
+.post__input-form > input[type="file"]::-webkit-file-upload-button {
+    display: none;
 }
 
 .post__input:hover {

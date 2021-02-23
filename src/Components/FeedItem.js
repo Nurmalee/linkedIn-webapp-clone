@@ -9,7 +9,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import Avatar from '@material-ui/core/Avatar';
 // import Comments from './Comments.js'
 
-const FeedItem = ({name, text, postButton, createdAt, photoId, id}) => {
+const FeedItem = ({name, text, postButton, createdAt, photoId}) => {
     const [likes, setLikes] = useState(null);
     const [showLikes, setShowLikes] = useState(false);
     // const [showCommentBox, setShowCommentBox] = useState(false);

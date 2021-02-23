@@ -13,8 +13,8 @@ const Feed = () => {
 
     useEffect(() => {
         const projectDatabaseRef = projectFirestore.collection('feed')
-        projectDatabaseRef.orderBy('createdAt', 'desc').onSnapshot(async(snapshot) => {
-            await setFeed(snapshot.docs.map(doc => ({id: doc.id, data: doc.data()})))
+        projectDatabaseRef.orderBy('createdAt', 'desc').onSnapshot(snapshot => {
+            setFeed(snapshot.docs.map(doc => ({id: doc.id, data: doc.data()})))
         })
     }, [])
 
@@ -37,7 +37,7 @@ const Feed = () => {
                 {feed.map(feedItem => {
                     const {name, text, createdAt, photoId} = feedItem.data
                         return (
-                            <FeedItem name={name} text={text} postButton={postButton} photoId={photoId} createdAt={createdAt} id={feedItem.id} key={feedItem.id}/>
+                            <FeedItem name={name} text={text} postButton={postButton} photoId={photoId} createdAt={createdAt} key={feedItem.id}/>
                         )
                     }
                 )}
