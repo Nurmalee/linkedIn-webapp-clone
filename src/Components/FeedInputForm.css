@@ -17,6 +17,7 @@
 
 .post__input-form {
     width: 100%;
+    display: flex;
 }
 
 .post__input input {
