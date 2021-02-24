@@ -1,3 +1,9 @@
+.postInput__container {
+    background-color: white;
+    padding: 15px 20px 0 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
 
 .post__input {
     padding: 5px 20px;

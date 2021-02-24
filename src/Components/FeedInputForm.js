@@ -55,6 +55,7 @@ const FeedInputForm = ({postButton}) => {
 
     return (
         <>
+        <div className='postInput__container'>
         <div className="post__input">
             <CreateIcon />
             <form onSubmit={handleFeedUpdate}>
@@ -72,6 +73,7 @@ const FeedInputForm = ({postButton}) => {
             {postButton((VideoLibraryIcon), "Video")}
             {postButton((EventIcon), "Event")}
             {postButton((AssignmentIcon), "Write Article")}
+        </div>
         </div>
         <ProgressBar uploadProgress={uploadProgress} />
         {imageFile && <p>{imageFile.name}</p> }

@@ -5,12 +5,12 @@
     color: #777;
 }
 
-.post__topContents {
+/* .post__topContents {
     background-color: white;
     padding: 15px 20px 0 20px;
     border-radius: 10px;
     border: 1px solid #ccc;
-}
+} */
 
 .post__buttons {
     display: flex;
