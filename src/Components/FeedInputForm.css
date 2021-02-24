@@ -14,7 +14,7 @@
 }
 
 .post__input:hover {
-    background-color: #ddd;
+    background-color: #eee;
 }
 
 .post__input form {
@@ -41,7 +41,7 @@
 }
 
 .post__input-form:focus {
-    background-color: #ddd;
+    background-color: #eee;
 }
 
 .post__input-form input[type="file"] {

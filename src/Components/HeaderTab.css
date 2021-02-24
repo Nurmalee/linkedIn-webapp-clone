@@ -12,7 +12,11 @@
     position: relative;
 }
 
-.headerTab::after,
+.headerTab:hover {
+    color: black;
+}
+
+/* .headerTab::after, */
 .headerTab:nth-child(1)::after {
     content: '';
     position: absolute;
@@ -22,7 +26,7 @@
     height: 2px;
 }
 
-.headerTab:hover:after,
+/* .headerTab:hover:after, */
 .headerTab:nth-child(1)::after {
     background-color: #222;
 }
@@ -34,6 +38,7 @@
 .headerTab p {
     font-size: 11px;
     font-weight: 400;
+    text-transform: capitalize;
 }
 
 .headerTab__icon {

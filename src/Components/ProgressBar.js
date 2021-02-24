@@ -4,7 +4,7 @@ import './ProgressBar.css'
 const ProgressBar = ({uploadProgress}) => {
 
     return (
-        <div className='progressBar' style={{width: uploadProgress + '%' }}></div>
+        <div className='progressBar' style={{width: `${uploadProgress}%` }}></div>
     )
 }
 
