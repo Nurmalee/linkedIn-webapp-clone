@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './FeedInputForm.css';
 import CreateIcon from '@material-ui/icons/Create';
 import ImageIcon from '@material-ui/icons/Image';
@@ -62,10 +62,10 @@ const FeedInputForm = ({postButton}) => {
             <form onSubmit={handleFeedUpdate}>
                 <div className="post__input-form">
                     <input type="text" placeholder="Start a post" value={input} onChange={(e) => setInput(e.target.value)}/>
-                    <label htmlFor='file'>
+                    {/* <label htmlFor='file'>
                         <input type='file' id='file' onChange={handlePictureUpload} />
                        <BackupIcon />
-                    </label>
+                    </label> */}
                 </div>
                
                 {/* <button type="submit" style={{display: "none" }}>POST</button> */}
@@ -73,7 +73,16 @@ const FeedInputForm = ({postButton}) => {
         </div>
 
         <div className="post__buttons">
-            {postButton((ImageIcon), "Photo")}
+
+            <label htmlFor='file'>
+                <input type='file' id='file' onChange={handlePictureUpload} />
+                <div className="post__button">
+                    <ImageIcon className="post__button-Icon"/>
+                    <h3>Photo</h3>
+                </div>
+            </label>
+           
+            {/* {postButton((ImageIcon), "Photo")} */}
             {postButton((VideoLibraryIcon), "Video")}
             {postButton((EventIcon), "Event")}
             {postButton((AssignmentIcon), "Write Article")}
