@@ -28,22 +28,6 @@
     cursor: pointer;
 }
 
-.post__topContents .post__button:first-child .post__button-Icon {
-    color: skyblue;
-}
-
-.post__topContents .post__button:nth-child(2) {
-    color: orange;
-}
-
-.post__topContents .post__button:nth-child(3) {
-    color: #ccc;
-}
-
-.post__topContents .post__button:nth-child(4) {
-    color: brown;
-}
-
 .post__button h3 {
     font-size: 12px;
     margin-left: 5px;

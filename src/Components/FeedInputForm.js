@@ -77,15 +77,15 @@ const FeedInputForm = ({postButton}) => {
             <label htmlFor='file'>
                 <input type='file' id='file' onChange={handlePictureUpload} />
                 <div className="post__button">
-                    <ImageIcon className="post__button-Icon"/>
+                    <ImageIcon className="post__button-Icon" style={{color: 'lightblue'}} />
                     <h3>Photo</h3>
                 </div>
             </label>
            
             {/* {postButton((ImageIcon), "Photo")} */}
-            {postButton((VideoLibraryIcon), "Video")}
-            {postButton((EventIcon), "Event")}
-            {postButton((AssignmentIcon), "Write Article")}
+            {postButton((VideoLibraryIcon), "Video", 'lightgreen')}
+            {postButton((EventIcon), "Event", 'orange')}
+            {postButton((AssignmentIcon), "Write Article", 'brown')}
         </div>
         </div>
         <ProgressBar uploadProgress={uploadProgress} />

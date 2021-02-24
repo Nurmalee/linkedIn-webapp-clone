@@ -18,10 +18,10 @@ const Feed = () => {
         })
     }, [])
 
-    const postButton = (Icon, title) => {
+    const postButton = (Icon, title, color) => {
         return (
             <div className="post__button">
-                <Icon className="post__button-Icon"/>
+                <Icon className="post__button-Icon" style={{color: `${color}`}}/>
                 <h3>{title}</h3>
             </div>
         )
