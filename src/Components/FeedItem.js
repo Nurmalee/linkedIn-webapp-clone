@@ -22,7 +22,7 @@ const FeedItem = ({name, text, postButton, createdAt, photoId}) => {
     }
 
     const handleComments = () => {
-        setFirstToComment(false);
+        setFirstToComment(!firstToComment);
         // setShowCommentBox(true);
         setComment(comment + 1);
     }

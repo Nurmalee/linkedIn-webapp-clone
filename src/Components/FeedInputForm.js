@@ -12,8 +12,7 @@ import ProgressBar from './ProgressBar'
 const FeedInputForm = ({postButton}) => {
     const [input, setInput] = useState('');
     const [imageFile, setImageFile] = useState(null);
-    const [uploadedImageUrl, setUploadedImageUrl] = useState(null)
-    const [uploadProgress, setUploadProgress] = useState(null)
+    const [uploadProgress, setUploadProgress] = useState(0)
 
     const imageTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/JPG', 'image/JPEG', 'image/PNG']
     
@@ -21,7 +20,7 @@ const FeedInputForm = ({postButton}) => {
         e.preventDefault()
 
         if(input ?? imageFile){
-            const projectStorageRef = projectStorage.ref(imageFile.name)
+            const projectStorageRef = projectStorage.ref(imageFile?.name)
             projectStorageRef.put(imageFile).on('state_changed', 
             (snapshot) => {
                 const percentageUpload = (snapshot.bytesTransferred/snapshot.totalBytes) * 100
@@ -30,15 +29,14 @@ const FeedInputForm = ({postButton}) => {
                 console.log(error)
             }, async () => {
                 const url = await projectStorageRef.getDownloadURL()
-                setUploadedImageUrl(url)
     
                 projectFirestore.collection('feed').add({
                     name: 'Lawal Nurudeen',
                     text: input,
                     createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                    photoId: uploadedImageUrl,
+                    photoId: url,
                 })
-                setInput("");
+                setInput('');
                 setUploadProgress(0);
                 setImageFile(null)
             })
@@ -76,6 +74,7 @@ const FeedInputForm = ({postButton}) => {
             {postButton((AssignmentIcon), "Write Article")}
         </div>
         <ProgressBar uploadProgress={uploadProgress} />
+        {imageFile && <p>{imageFile.name}</p> }
         </>
     )
 }
