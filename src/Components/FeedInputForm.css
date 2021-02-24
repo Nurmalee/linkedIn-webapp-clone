@@ -11,7 +11,6 @@
     align-items: center;
     border: 1px solid #ccc;
     border-radius: 10cm;
-    /* border-top-left-radius: 10px; */
 }
 
 .post__input:hover {
@@ -60,17 +59,3 @@
     display: inline-block;
     cursor: pointer;
 }
-
-/* .post__input:hover label {
-     color: white;
-} */
-
-/* .post__input-form > input[type="file"] {
-    flex: 0.3;
-    width: 100%;
-}
-
-.post__input-form > input[type="file"]::-webkit-file-upload-button {
-    display: none;
-} */
-

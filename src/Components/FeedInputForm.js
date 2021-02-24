@@ -80,7 +80,7 @@ const FeedInputForm = ({postButton}) => {
         </div>
         </div>
         <ProgressBar uploadProgress={uploadProgress} />
-        {imageFile && <p style={{fontSize: '9px'}}>{imageFile.name}</p> }
+        {imageFile && <p style={{fontSize: '9px', textAlign: 'center'}}>{imageFile.name}</p> }
         </>
     )
 }

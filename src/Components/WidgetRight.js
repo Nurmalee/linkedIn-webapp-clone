@@ -8,7 +8,7 @@ import { widgetAdsPics } from '../data/app-data';
 // import linked_ads from '../app-logo/linkedIn__jobs-ads.jpg';
 
 const WidgetRight = () => {
-    const [widgetAd, setWidgetAd] = useState('')
+    const [widgetAd, setWidgetAd] = useState('https://avatars.githubusercontent.com/u/70635657?s=460&u=eea4bb2b6dff02e5993458cecc93018eca3bd17d&v=4')
 
     useEffect(() => {
         let randomAdPic = setInterval(() => {

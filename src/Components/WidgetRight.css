@@ -25,7 +25,9 @@
     border-radius: 5px;
     transition: 200ms ease-in-out;
     border: none;
+    outline: none;
     background-color: white;
+    cursor: pointer;
 }
 
 .widget__items button:hover {
@@ -57,7 +59,7 @@
 
 .followSuggestions__button:hover {
     background-color: rgb(212, 232, 240);
-    border: 2px solid !important;
+    /* border: 2px solid !important; */
 }
 
 .followSuggestions__company {
