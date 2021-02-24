@@ -6,14 +6,21 @@
 }
 
 .post__input {
-    padding: 5px 20px;
     display: flex;
     align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 10cm;
 }
 
-.post__input:hover {
+.post__formContainer {
+    border: 1px solid #ccc;
+    padding: 5px 20px;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border-radius: 10cm;
+    cursor: pointer;
+}
+
+.post__formContainer:hover {
     background-color: #eee;
 }
 
