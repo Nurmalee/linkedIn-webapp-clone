@@ -14,10 +14,14 @@
     /* border-top-left-radius: 10px; */
 }
 
+.post__input:hover {
+    background-color: #ddd;
+}
 
 .post__input form {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 
@@ -33,23 +37,40 @@
     width: 100%;
     border: none;
     outline: none;
-    flex: 0.7;
+    flex: 1;
+    background-color: transparent;
+}
+
+.post__input-form:focus {
+    background-color: #ddd;
+}
+
+.post__input-form input[type="file"] {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.post__input-form label {
+    font-weight: 700;
+    color: #333;
+    display: inline-block;
     cursor: pointer;
 }
 
-.post__input-form > input[type="file"] {
+/* .post__input:hover label {
+     color: white;
+} */
+
+/* .post__input-form > input[type="file"] {
     flex: 0.3;
     width: 100%;
 }
 
 .post__input-form > input[type="file"]::-webkit-file-upload-button {
     display: none;
-}
+} */
 
-.post__input:hover {
-    background-color: #ddd;
-}
-
-.post__input:hover input {
-    background-color: #ddd;
-}

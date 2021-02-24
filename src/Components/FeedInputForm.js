@@ -5,6 +5,7 @@ import ImageIcon from '@material-ui/icons/Image';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import EventIcon from '@material-ui/icons/Event';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import BackupIcon from '@material-ui/icons/Backup';
 import firebase from 'firebase';
 import { projectFirestore, projectStorage } from '../Config/firebase';
 import ProgressBar from './ProgressBar'
@@ -61,7 +62,10 @@ const FeedInputForm = ({postButton}) => {
             <form onSubmit={handleFeedUpdate}>
                 <div className="post__input-form">
                     <input type="text" placeholder="Start a post" value={input} onChange={(e) => setInput(e.target.value)}/>
-                    <input type='file' onChange={handlePictureUpload} />
+                    <label htmlFor='file'>
+                        <input type='file' id='file' onChange={handlePictureUpload} />
+                       <BackupIcon />
+                    </label>
                 </div>
                
                 {/* <button type="submit" style={{display: "none" }}>POST</button> */}
@@ -76,7 +80,7 @@ const FeedInputForm = ({postButton}) => {
         </div>
         </div>
         <ProgressBar uploadProgress={uploadProgress} />
-        {imageFile && <p>{imageFile.name}</p> }
+        {imageFile && <p style={{fontSize: '9px'}}>{imageFile.name}</p> }
         </>
     )
 }
