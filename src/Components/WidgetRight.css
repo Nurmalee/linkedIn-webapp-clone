@@ -81,7 +81,11 @@
     background-color: white;
     position: sticky;
     top: 70px;
-    /* width: max-content; */
+    cursor: pointer;
+}
+
+.widget__adverts:hover {
+    opacity: 0.8;
 }
 
 .widget__adverts img {
