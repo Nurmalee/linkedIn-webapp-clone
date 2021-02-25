@@ -6,7 +6,7 @@ import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import EventIcon from '@material-ui/icons/Event';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import Avatar from '@material-ui/core/Avatar';
-import BackupIcon from '@material-ui/icons/Backup';
+// import BackupIcon from '@material-ui/icons/Backup';
 import firebase from 'firebase';
 import { projectFirestore, projectStorage } from '../Config/firebase';
 import ProgressBar from './ProgressBar'

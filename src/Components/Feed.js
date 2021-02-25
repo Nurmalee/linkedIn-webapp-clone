@@ -37,7 +37,7 @@ const Feed = () => {
                 {feed.map(feedItem => {
                     const {name, text, createdAt, photoId} = feedItem.data
                         return (
-                            <FeedItem name={name} text={text} postButton={postButton} photoId={photoId} createdAt={createdAt} key={feedItem.id}/>
+                            <FeedItem name={name} text={text} postButton={postButton} photoId={photoId} createdAt={createdAt} key={feedItem.id} feedItemId={feedItem.id} />
                         )
                     }
                 )}

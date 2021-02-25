@@ -1,0 +1,20 @@
+.comment {
+    display: flex;
+    margin: 10px 20px;
+    /* text-align: justify; */
+}
+
+.comment__content {
+    background-color: #eee;
+    padding: 10px;
+    flex: 1;
+    margin-left: 10px;
+    font-size: 14px;
+    border-top-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.comment__content .comment__timestamp {
+    font-size: 8px;
+}

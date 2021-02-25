@@ -1,0 +1,26 @@
+.comments__header {
+    display: flex;
+    padding: 10px;
+    margin: 0 10px;
+    margin-bottom: 10px ;
+    align-items: center;
+    /* border: 1px solid; */
+}
+
+.comments form {
+    flex: 1;
+}
+
+.comments-input {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 10cm;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.comments-input:focus {
+    border: 2px solid #ccc;
+}
