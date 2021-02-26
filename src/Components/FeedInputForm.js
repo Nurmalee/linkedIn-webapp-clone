@@ -42,7 +42,7 @@ const FeedInputForm = ({postButton}) => {
                 setInput('');
                 setUploadProgress(0);
                 setImageFile(null)
-            
+                setImageUrl('')
         }
     }
 
