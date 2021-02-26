@@ -6,19 +6,21 @@ import WidgetRight from './Components/WidgetRight';
 import LoginPage from './Components/LoginPage';
 
 function App() {
-  const user = "lee"
+  const user = null
+
   return (
     <div className="App">
       <HeaderNav />
-        {!user? <LoginPage /> : 
-          (
-            <div className="app__content">
-              <Sidebar />
-              <Feed />
-              <WidgetRight />
-            </div>
-          )
-        }
+      {
+        !user? <LoginPage className='loginPage'/> : (
+          <div className="app__content">
+          <Sidebar />
+          <Feed />
+          <WidgetRight />
+        </div>
+        )
+      }
+           
     </div>
   );
 }

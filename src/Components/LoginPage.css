@@ -1,0 +1,68 @@
+.loginPage {
+    margin: 100px auto 0 auto;
+    text-align: center;
+    padding: 0 30px;
+    max-width: 450px;
+}
+
+.loginPage__logo {
+    width: 100%;
+}
+
+.loginPage__logo img {
+    object-fit: contain;
+    height: 80px;
+}
+
+.loginPage form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.loginPage form input {
+    height: 25px;
+    padding: 20px 10px;
+    width: 95%;
+    font-size: 16px;
+    border-radius: 4px;
+    outline: none;
+    margin: 5px auto;
+    transition: 1000ms;
+}
+
+.loginPage form input:focus {
+    background-color: #333;
+    color: whitesmoke;
+}
+
+.loginPage form button {
+    height: 45px;
+    /* padding: 20px; */
+    width: 95%;
+    margin: 5px auto;
+    color: white;
+    font-weight: 900;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 1000ms;
+    background-color: rgb(30, 87, 137);
+}
+
+.loginPage form button:hover {
+    background-color: rgb(13, 52, 86);
+}
+
+.loginPage > p > span {
+    color: rgb(30, 87, 137);
+    text-decoration: underline;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 1000ms;
+}
+
+.loginPage > p > span:hover {
+    color: rgb(13, 52, 86);
+}
