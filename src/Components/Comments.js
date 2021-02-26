@@ -31,7 +31,9 @@ const Comments = ({feedItemId}) => {
     const handleComments = (e) => {
         e.preventDefault();
         if(commentInput){
-            projectFirestore.collection('feed').doc(feedItemId).collection('comments').add({
+            projectFirestore.collection('feed')
+            .doc(feedItemId).collection('comments')
+            .add({
                 text: commentInput,
                 createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             })

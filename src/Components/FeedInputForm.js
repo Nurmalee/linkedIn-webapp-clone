@@ -15,14 +15,40 @@ const FeedInputForm = ({postButton}) => {
     const [input, setInput] = useState('');
     const [imageFile, setImageFile] = useState(null);
     const [uploadProgress, setUploadProgress] = useState(0)
+    const [imageUrl, setImageUrl] = useState('')
 
     const imageTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/JPG', 'image/JPEG', 'image/PNG']
     
     const handleFeedUpdate = (e) => {
         e.preventDefault()
 
-        if(input ?? imageFile){
-            const projectStorageRef = projectStorage.ref('images').child(imageFile.name) //OR in ES6 format? projectStorage.ref(`images/${imageFile.name}`)
+        if(input || imageFile){
+            // const projectStorageRef = projectStorage.ref('images').child(imageFile?.name) //OR in ES6 format? projectStorage.ref(`images/${imageFile.name}`)
+            // projectStorageRef.put(imageFile).on('state_changed', 
+            // (snapshot) => {
+            //     const percentageUpload = (snapshot.bytesTransferred/snapshot.totalBytes) * 100
+            //     setUploadProgress(percentageUpload)
+            // }, (error) => {
+            //     console.log(error)
+            // }, async () => {
+            //     const url = await projectStorageRef.getDownloadURL()
+    
+                projectFirestore.collection('feed').add({
+                    name: 'Lawal Nurudeen',
+                    text: input,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    photoId: imageUrl,
+                })
+                setInput('');
+                setUploadProgress(0);
+                setImageFile(null)
+            
+        }
+    }
+
+    const handlePictureStorage = () => {
+        if(imageFile){
+            const projectStorageRef = projectStorage.ref('images').child(imageFile?.name) //OR in ES6 format? projectStorage.ref(`images/${imageFile.name}`)
             projectStorageRef.put(imageFile).on('state_changed', 
             (snapshot) => {
                 const percentageUpload = (snapshot.bytesTransferred/snapshot.totalBytes) * 100
@@ -31,21 +57,14 @@ const FeedInputForm = ({postButton}) => {
                 console.log(error)
             }, async () => {
                 const url = await projectStorageRef.getDownloadURL()
-    
-                projectFirestore.collection('feed').add({
-                    name: 'Lawal Nurudeen',
-                    text: input,
-                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                    photoId: url,
-                })
-                setInput('');
-                setUploadProgress(0);
-                setImageFile(null)
+                setImageUrl(url)
             })
+        } else {
+            return;
         }
     }
 
-    const handlePictureUpload = (e) => {
+    const handlePictureSelection = (e) => {
         let selectedImage = e.target.files[0]
         if(selectedImage && imageTypes.includes(selectedImage.type)){
             setImageFile(selectedImage)
@@ -81,15 +100,20 @@ const FeedInputForm = ({postButton}) => {
         <div className="post__buttons">
 
             <label htmlFor='file'>
-                <input type='file' id='file' onChange={handlePictureUpload} />
+                <input type='file' id='file' onChange={handlePictureSelection} />
                 <div className="post__button">
                     <ImageIcon className="post__button-Icon" style={{color: 'lightblue'}} />
                     <h3>Photo</h3>
                 </div>
             </label>
+
+            <div className="post__button" onClick={handlePictureStorage}>
+                    <ImageIcon className="post__button-Icon" style={{color: 'darkblue'}} />
+                    <h3>Upload Image</h3>
+            </div>
            
             {/* {postButton((ImageIcon), "Photo")} */}
-            {postButton((VideoLibraryIcon), "Video", 'lightgreen')}
+            {/* {postButton((VideoLibraryIcon), "Video", 'lightgreen')} */}
             {postButton((EventIcon), "Event", 'orange')}
             {postButton((AssignmentIcon), "Write Article", 'brown')}
         </div>
