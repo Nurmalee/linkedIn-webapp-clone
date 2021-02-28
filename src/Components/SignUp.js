@@ -51,7 +51,7 @@ const SignUp = () => {
                 <input type="password" placeholder='Confirm Your Password' value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} />
                 <button type='submit' disabled={loading}> SIGN UP </button>
             </form>
-            <p>Already have an account? <Link to='/login'> LOG IN </Link> </p>
+            <p>Already have an account? <Link to='/login' className='loginPage__link'> LOG IN </Link> </p>
         </div>
     )
 }

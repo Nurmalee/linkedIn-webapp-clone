@@ -36,7 +36,7 @@ const ResetPassword = () => {
             {errorMessage && <p className='signup__error'>{errorMessage}</p> }
             <form onSubmit={handleResetPassword}>
                 <input type="email" placeholder='Email Address' value={email} onChange={e => setEmail(e.target.value)} required/>
-                <button type='submit' disabled={loading}> LOG IN </button>
+                <button type='submit' disabled={loading}> RESET PASSWORD </button>
             </form>
             <p>Already have an account? <Link to='/login' className='loginPage__link'> LOG IN </Link> </p>
         </div>

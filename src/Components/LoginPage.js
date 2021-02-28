@@ -42,6 +42,7 @@ const LoginPage = () => {
                 <button type='submit' disabled={loading}> LOG IN </button>
             </form>
             <p>Don't have an account? <Link to='/signup' className='loginPage__link'> REGISTER NOW </Link> </p>
+            <p>Forgot Your Password? <Link to='/resetPassword' className='loginPage__link'> RESET PASSWORD </Link> </p>
         </div>
     )
 }
