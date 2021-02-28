@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './LoginPage.css'
 import linkedIn_Logo from '../app-logo/linkedin-logo-png-1840.png'
 import { useAuth } from '../contextAPI/userAuthContext' 
+import { Link, useHistory} from 'react-router-dom'
 
 const SignUp = () => {
     const { signUp } = useAuth()
@@ -12,6 +13,7 @@ const SignUp = () => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [errorMessage, setErrorMessage] = useState('')
     const [loading, setLoading] = useState(false)
+    const history = useHistory()
 
     const handleSignUpForm = async (e) => {
         e.preventDefault()
@@ -25,6 +27,7 @@ const SignUp = () => {
             setErrorMessage('')
             setLoading(true)
             await signUp(email, password, fullName, profilePicUrl)
+            history.push("/")
             setEmail('')
             setPassword('')
             setConfirmPassword('')
@@ -48,7 +51,7 @@ const SignUp = () => {
                 <input type="password" placeholder='Confirm Your Password' value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} />
                 <button type='submit' disabled={loading}> SIGN UP </button>
             </form>
-            <p>Don't have an account? <span> REGISTER NOW </span> </p>
+            <p>Already have an account? <span> <Link to='/login'> LOGIN </Link> </span> </p>
         </div>
     )
 }
