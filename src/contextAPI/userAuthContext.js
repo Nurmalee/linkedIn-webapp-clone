@@ -26,7 +26,15 @@ export function UserAuthProvider({children}) {
     }
 
     const signIn = (email, password) => {
-        auth.signInWithEmailAndPassword(email, password)
+        return auth.signInWithEmailAndPassword(email, password)
+    }
+
+    const forgotPassword = (email) => {
+        return auth.sendPasswordResetEmail(email)
+    }
+
+    const signOut = () => {
+        return auth.signOut()
     }
 
     useEffect(() => {
@@ -40,7 +48,9 @@ export function UserAuthProvider({children}) {
     const value = {
         currentUser,
         signUp,
-        signIn
+        signIn,
+        forgotPassword,
+        signOut
     }
 
     return (

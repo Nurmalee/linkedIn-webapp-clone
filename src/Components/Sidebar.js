@@ -6,7 +6,7 @@ import { useAuth } from '../contextAPI/userAuthContext'
 // import nurmalee_pics from '../app-logo/nurmalee__linkedIn.jpg';
 
 const Sidebar = () => {
-    const { currentUser } = useAuth()
+    const { currentUser, signOut } = useAuth()
     const [profileViews, setProfileViews] = useState(null);
     const [viewPost, setViewPost] = useState(null);
 
@@ -26,6 +26,15 @@ const Sidebar = () => {
         )
     }
 
+    const handleProfileSignOut = async () => {
+        try {
+            await  signOut(email)
+        } catch (error) {
+            // setErrorMessage(error.message);
+            console.log(error.message);
+        }
+    }
+
     return (
         <section className='sidebar'>
             <div className='sidebar__profile'>
@@ -33,6 +42,8 @@ const Sidebar = () => {
                 <Avatar src={currentUser && currentUser.photoURL} className='sidebar__profile-pics' />
                 <h3>{currentUser && currentUser.displayName}</h3>
                 <p>Software Engineer (Full-stack Developer, Graphic Designer, Creative/Pencil Artist)</p>
+
+                <button type='button' onClick={handleProfileSignOut} >SIGN OUT</button>
             </div>
 
             <div className="sidebar__views">

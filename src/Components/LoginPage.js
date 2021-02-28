@@ -39,9 +39,9 @@ const LoginPage = () => {
             <form onSubmit={handleSignInForm}>
                 <input type="email" placeholder='Email Address' value={email} onChange={e => setEmail(e.target.value)} required/>
                 <input type="password" placeholder='Your Password' value={password} onChange={e => setPassword(e.target.value)} />
-                <button type='submit' disabled={loading}> SIGN IN </button>
+                <button type='submit' disabled={loading}> LOG IN </button>
             </form>
-            <p>Don't have an account? <span> <Link to='/signup'> REGISTER NOW </Link> </span> </p>
+            <p>Don't have an account? <Link to='/signup' className='loginPage__link'> REGISTER NOW </Link> </p>
         </div>
     )
 }

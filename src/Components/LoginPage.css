@@ -59,7 +59,7 @@
     background-color: #777;
 }
 
-.loginPage > p > span {
+.loginPage > p .loginPage__link {
     color: rgb(30, 87, 137);
     text-decoration: underline;
     font-weight: 900;
@@ -67,7 +67,7 @@
     transition: 1000ms;
 }
 
-.loginPage > p > span:hover {
+.loginPage > p .loginPage__link:hover {
     color: rgb(13, 52, 86);
 }
 
