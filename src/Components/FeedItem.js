@@ -7,9 +7,9 @@ import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined';
 import SendOutlinedIcon from '@material-ui/icons/SendOutlined';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Avatar from '@material-ui/core/Avatar';
-import Comments from './Comments.js'
+import Comments from './Comments.js' 
 
-const FeedItem = ({name, text, postButton, createdAt, photoId, feedItemId}) => {
+const FeedItem = ({name, text, postButton, createdAt, photoId, feedItemId, userPhoto, userEmail}) => {
     const [likes, setLikes] = useState(null);
     const [showLikes, setShowLikes] = useState(false);
     const [showCommentBox, setShowCommentBox] = useState(false);
@@ -30,10 +30,10 @@ const FeedItem = ({name, text, postButton, createdAt, photoId, feedItemId}) => {
     return (
         <section className='feedItem'>
             <div className="feedItem__header">
-                <Avatar src='https://avatars.githubusercontent.com/u/70635657?s=460&u=eea4bb2b6dff02e5993458cecc93018eca3bd17d&v=4' className="feedItem__header-pics"/>
+                <Avatar src={userPhoto} className="feedItem__header-pics"> {userEmail[0]} </Avatar>
                 <div className="feedItem__header-title">
-                    <p>{name ?? 'Anonymous Sender'}</p>
-                    <p>Javascript/React Developer | Front-end Engineer | Graphic Artist </p>
+                    <p>{name}</p>
+                    <p>{userEmail}</p>
                     <p>{new Date(createdAt?.toDate()).toUTCString()} </p>
                 </div>
             </div>

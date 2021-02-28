@@ -39,9 +39,10 @@ const Sidebar = () => {
         <section className='sidebar'>
             <div className='sidebar__profile'>
                 <div className='sidebar__profile-banner'></div>
-                <Avatar src={currentUser && currentUser.photoURL} className='sidebar__profile-pics' />
+                <Avatar src={currentUser && currentUser.photoURL} className='sidebar__profile-pics'> {currentUser.email[0]} </Avatar>
                 <h3>{currentUser && currentUser.displayName}</h3>
-                <p>Software Engineer (Full-stack Developer, Graphic Designer, Creative/Pencil Artist)</p>
+                <p> Email Address: {currentUser && currentUser.email}</p>
+                {/* <p>Software Engineer (Full-stack Developer, Graphic Designer, Creative/Pencil Artist)</p> */}
 
                 <button type='button' onClick={handleProfileSignOut} >SIGN OUT</button>
             </div>

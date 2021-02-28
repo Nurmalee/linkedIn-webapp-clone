@@ -37,6 +37,8 @@ const FeedInputForm = ({postButton}) => {
     
                 projectFirestore.collection('feed').add({
                     name: currentUser?.displayName,
+                    userPhoto: currentUser?.photoURL,
+                    userEmail: currentUser?.email,
                     text: input,
                     createdAt: firebase.firestore.FieldValue.serverTimestamp(),
                     photoId: imageUrl,
@@ -70,8 +72,6 @@ const FeedInputForm = ({postButton}) => {
         let selectedImage = e.target.files[0]
         if(selectedImage && imageTypes.includes(selectedImage.type)){
             setImageFile(selectedImage)
-        } else if (!selectedImage){
-            setImageFile(null)
         } else {
             setImageFile(null)
         }
@@ -82,7 +82,7 @@ const FeedInputForm = ({postButton}) => {
         <>
         <div className='postInput__container'>
         <div className="post__input">
-            <Avatar src='https://avatars.githubusercontent.com/u/70635657?s=460&u=eea4bb2b6dff02e5993458cecc93018eca3bd17d&v=4' style={{marginRight: '7px', height: '50px', width: '50px'}} />
+            <Avatar src={currentUser && currentUser.photoURL} style={{marginRight: '7px', height: '50px', width: '50px'}} />
             <div className="post__formContainer">
                 <CreateIcon />
                 <form onSubmit={handleFeedUpdate}>

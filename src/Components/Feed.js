@@ -3,13 +3,19 @@ import './Feed.css';
 import FeedItem from './FeedItem';
 import FeedInputForm from './FeedInputForm';
 import { projectFirestore } from '../Config/firebase';
+import { useAuth } from '../contextAPI/userAuthContext'
 
-const Feed = ({currentUser}) => {
+const Feed = () => {
     const [feed, setFeed] = useState([]);
+    const { currentUser } = useAuth();
 
     useEffect(() => {
         feed.length > 0 ? document.title = `(${feed.length}) Feed | LinkedIn` :  document.title = `LinkedIn`;
     }, [feed])
+
+    useEffect(() => {
+        !currentUser ? document.title = `LinkedIn` : document.title = `(${feed.length}) Feed | LinkedIn`
+    }, [currentUser])
 
     useEffect(() => {
         const projectDatabaseRef = projectFirestore.collection('feed')
@@ -35,9 +41,9 @@ const Feed = ({currentUser}) => {
 
             <div className="post__body">
                 {feed.map(feedItem => {
-                    const {name, text, createdAt, photoId} = feedItem.data
+                    const {name, text, createdAt, photoId, userPhoto, userEmail} = feedItem.data
                         return (
-                            <FeedItem name={name} text={text} postButton={postButton} photoId={photoId} createdAt={createdAt} key={feedItem.id} feedItemId={feedItem.id} />
+                            <FeedItem name={name} text={text} postButton={postButton} photoId={photoId} userPhoto={userPhoto} userEmail={userEmail} createdAt={createdAt} key={feedItem.id} feedItemId={feedItem.id} />
                         )
                     }
                 )}

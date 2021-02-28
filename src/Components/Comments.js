@@ -3,10 +3,12 @@ import './Comments.css';
 import Avatar from '@material-ui/core/Avatar';
 // import nurmalee_pics from './app-logo/nurmalee__linkedIn.jpg';
 import Comment from './Comment';
+import { useAuth } from '../contextAPI/userAuthContext'
 import { projectFirestore } from '../Config/firebase';
 import firebase from 'firebase';
 
 const Comments = ({feedItemId}) => {
+    const { currentUser } = useAuth()
     const [commentInput, setCommentInput] = useState('');
     const [comments,setComments] = useState([]);
 
@@ -35,6 +37,9 @@ const Comments = ({feedItemId}) => {
             .doc(feedItemId).collection('comments')
             .add({
                 text: commentInput,
+                name: currentUser?.displayName,
+                userPhoto: currentUser?.photoURL,
+                userEmail: currentUser?.email,
                 createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             })
             // const newComments = [{commentInput, id: new Date().getTime().toString() } ,...comments];
@@ -46,7 +51,7 @@ const Comments = ({feedItemId}) => {
     return (
         <div className="comments">
             <div className="comments__header">
-                <Avatar src='' />
+                <Avatar src={currentUser && currentUser.photoURL} />
                 <form onSubmit={handleComments}>
                     <input type="text" placeholder="say something nice" value={commentInput} onChange={(e) => {setCommentInput(e.target.value)}} className="comments-input"/>
                 </form>
@@ -54,9 +59,9 @@ const Comments = ({feedItemId}) => {
            
             <div className="comments__body">
                 {comments.map((comment) => {
-                    const {text, createdAt} = comment.data
+                    // const {text, createdAt, name, userPhoto, userEmail} = comment.data
                         return (
-                            <Comment text={text} createdAt={createdAt} key={comment.id} />
+                            <Comment {...comment.data} key={comment.id} />
                         )
                     }
                 )}

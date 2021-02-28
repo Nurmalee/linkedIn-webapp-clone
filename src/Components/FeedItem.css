@@ -105,7 +105,6 @@
 .feedItem__header-title p:nth-child(2),
 .feedItem__header-title p:nth-child(3) {
     font-size: 10px;
-    padding-top: 5px;
     color: #aaa;
 }
 
