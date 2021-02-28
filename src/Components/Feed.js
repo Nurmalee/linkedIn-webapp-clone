@@ -4,7 +4,7 @@ import FeedItem from './FeedItem';
 import FeedInputForm from './FeedInputForm';
 import { projectFirestore } from '../Config/firebase';
 
-const Feed = () => {
+const Feed = ({currentUser}) => {
     const [feed, setFeed] = useState([]);
 
     useEffect(() => {

@@ -21,8 +21,8 @@
 }
 
 .loginPage form input {
-    height: 25px;
-    padding: 20px 10px;
+    /* height: 25px; */
+    padding: 10px;
     width: 95%;
     font-size: 16px;
     border-radius: 4px;
@@ -55,6 +55,10 @@
     background-color: rgb(13, 52, 86);
 }
 
+.loginPage form button:disabled {
+    background-color: #777;
+}
+
 .loginPage > p > span {
     color: rgb(30, 87, 137);
     text-decoration: underline;
@@ -65,4 +69,13 @@
 
 .loginPage > p > span:hover {
     color: rgb(13, 52, 86);
+}
+
+.signup__error {
+    color: brown;
+    padding: 10px;
+    width: 95%;
+    background-color: rgba(255, 0, 0, 0.324);
+    width: 95%;
+    margin: 0 auto;
 }

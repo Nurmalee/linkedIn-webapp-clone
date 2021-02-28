@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react'
 import './Sidebar.css';
 import Avatar from '@material-ui/core/Avatar';
 import LabelImportantIcon from '@material-ui/icons/LabelImportant';
+import { useAuth } from '../contextAPI/userAuthContext' 
 // import nurmalee_pics from '../app-logo/nurmalee__linkedIn.jpg';
 
 const Sidebar = () => {
-
+    const { currentUser } = useAuth()
     const [profileViews, setProfileViews] = useState(null);
     const [viewPost, setViewPost] = useState(null);
 
@@ -30,7 +31,7 @@ const Sidebar = () => {
             <div className='sidebar__profile'>
                 <div className='sidebar__profile-banner'></div>
                 <Avatar src='https://avatars.githubusercontent.com/u/70635657?s=460&u=eea4bb2b6dff02e5993458cecc93018eca3bd17d&v=4' className='sidebar__profile-pics' />
-                <h3>Nurudeen Lawal</h3>
+                <h3>{currentUser.displayName}</h3>
                 <p>Software Engineer (Full-stack Developer, Graphic Designer, Creative/Pencil Artist)</p>
             </div>
 

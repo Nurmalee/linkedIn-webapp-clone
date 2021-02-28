@@ -10,8 +10,10 @@ import Avatar from '@material-ui/core/Avatar';
 import firebase from 'firebase';
 import { projectFirestore, projectStorage } from '../Config/firebase';
 import ProgressBar from './ProgressBar'
+import { useAuth } from '../contextAPI/userAuthContext' 
 
 const FeedInputForm = ({postButton}) => {
+    const { currentUser } = useAuth()
     const [input, setInput] = useState('');
     const [imageFile, setImageFile] = useState(null);
     const [uploadProgress, setUploadProgress] = useState(0)
@@ -34,7 +36,7 @@ const FeedInputForm = ({postButton}) => {
             //     const url = await projectStorageRef.getDownloadURL()
     
                 projectFirestore.collection('feed').add({
-                    name: 'Lawal Nurudeen',
+                    name: currentUser.displayName,
                     text: input,
                     createdAt: firebase.firestore.FieldValue.serverTimestamp(),
                     photoId: imageUrl,
