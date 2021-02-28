@@ -6,13 +6,13 @@ import { useAuth } from '../contextAPI/userAuthContext'
 const PrivateRoute = ({component: Component, ...rest}) => {
     const { currentUser } = useAuth()
     return (
-        <Route>
+        <Route
             {...rest}
             render = {props => {
                 return currentUser ? <Component {...props} /> : <Redirect to="/login" />
             }}
             
-        </Route>
+        />
     )
 }
 

@@ -28,7 +28,7 @@ const Sidebar = () => {
 
     const handleProfileSignOut = async () => {
         try {
-            await  signOut()
+            await signOut()
         } catch (error) {
             // setErrorMessage(error.message);
             console.log(error.message);

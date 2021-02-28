@@ -34,7 +34,7 @@ export function UserAuthProvider({children}) {
     }
 
     const signOut = () => {
-        currentUser.signOut()
+        return auth.signOut()
     }
 
     useEffect(() => {

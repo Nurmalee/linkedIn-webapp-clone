@@ -6,7 +6,7 @@ import SignUp from './Components/SignUp';
 import ResetPassword from './Components/ResetPassword';
 import { UserAuthProvider } from './contextAPI/userAuthContext'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-// import PrivateRoute from "./Components/PrivateRoute";
+import PrivateRoute from "./Components/PrivateRoute";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <div className="App">
         <HeaderNav />
         <Switch>
-          <Route exact path="/" component={Dashboard} />
+          <PrivateRoute exact path="/" component={Dashboard} />
           <Route path="/signup" component={SignUp} />
           <Route path="/login" component={LoginPage} />
           <Route path="/resetPassword" component={ResetPassword} />
