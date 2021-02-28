@@ -41,8 +41,8 @@ const SignUp = () => {
             </div>
             {errorMessage && <p className='signup__error'>{errorMessage}</p> }
             <form onSubmit={handleSignUpForm}>
-                <input type="text" placeholder='Full Name' value={fullName} onChange={e => setFullName(e.target.value)} />
-                <input type="email" placeholder='Email Address' value={email} onChange={e => setEmail(e.target.value)} />
+                <input type="text" placeholder='Full Name - Required' value={fullName} onChange={e => setFullName(e.target.value)} required />
+                <input type="email" placeholder='Email Address -Required' value={email} onChange={e => setEmail(e.target.value)} required/>
                 <input type="text" placeholder='Profile Pic Url' value={profilePicUrl} onChange={e => setProfilePicUrl(e.target.value)} />
                 <input type="password" placeholder='Your Password' value={password} onChange={e => setPassword(e.target.value)} />
                 <input type="password" placeholder='Confirm Your Password' value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} />

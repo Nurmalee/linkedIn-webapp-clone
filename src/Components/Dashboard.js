@@ -3,7 +3,6 @@ import './Dashboard.css'
 import Sidebar from './Sidebar';
 import Feed from './Feed';
 import WidgetRight from './WidgetRight';
-import { useAuth } from '../contextAPI/userAuthContext' 
 
 const Dashboard = () => {
     return (

@@ -30,8 +30,8 @@ const Sidebar = () => {
         <section className='sidebar'>
             <div className='sidebar__profile'>
                 <div className='sidebar__profile-banner'></div>
-                <Avatar src='https://avatars.githubusercontent.com/u/70635657?s=460&u=eea4bb2b6dff02e5993458cecc93018eca3bd17d&v=4' className='sidebar__profile-pics' />
-                <h3>{currentUser.displayName}</h3>
+                <Avatar src={currentUser && currentUser.photoURL} className='sidebar__profile-pics' />
+                <h3>{currentUser && currentUser.displayName}</h3>
                 <p>Software Engineer (Full-stack Developer, Graphic Designer, Creative/Pencil Artist)</p>
             </div>
 

@@ -9,19 +9,27 @@ export function useAuth(){
 
 export function UserAuthProvider({children}) {
     const [currentUser, setCurrrentUser] = useState('')
+    const [loading, setLoading] = useState(true)
 
     const signUp = (email, password, fullName, profilePicUrl) => {
-        auth.createUserWithEmailAndPassword(email, password)
-        .then(userAuth => {
-            userAuth.user.updateProfile({
-                displayName: fullName,
-                photoURL: profilePicUrl
-            })
-        })
+        if(email && fullName && password){
+            auth.createUserWithEmailAndPassword(email, password)
+            .then(createdUser => {
+                createdUser.user.updateProfile({
+                    displayName: fullName,
+                    photoURL: profilePicUrl
+                })
+            }).catch((error) => console.log(error.message))
+        } else {
+            alert('Email, Full Name and Password must be present')
+        }
     }
 
     useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(user => setCurrrentUser(user))
+        const unsubscribe = auth.onAuthStateChanged(user => {
+            setCurrrentUser(user)
+            setLoading(false)
+        })
         return unsubscribe
     }, [])
 
@@ -32,7 +40,7 @@ export function UserAuthProvider({children}) {
 
     return (
         <userAuthContext.Provider value={value}>
-            {children}
+            {!loading && children}
         </userAuthContext.Provider>
     )
 }

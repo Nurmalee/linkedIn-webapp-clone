@@ -36,7 +36,7 @@ const FeedInputForm = ({postButton}) => {
             //     const url = await projectStorageRef.getDownloadURL()
     
                 projectFirestore.collection('feed').add({
-                    name: currentUser.displayName,
+                    name: currentUser?.displayName,
                     text: input,
                     createdAt: firebase.firestore.FieldValue.serverTimestamp(),
                     photoId: imageUrl,
