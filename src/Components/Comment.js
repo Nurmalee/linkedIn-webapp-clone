@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import './Comment.css';
 import Avatar from '@material-ui/core/Avatar';
 
-const Comment = ({text, createdAt, name, userPhoto, userEmail}) => {
+const Comment = forwardRef(({text, createdAt, name, userPhoto, userEmail}, ref) => {
 
     return (
-        <div className="comment">
+        <div ref={ref} className="comment">
             <Avatar src={userPhoto}> {userEmail[0]} </Avatar>
             <div className="comment__content">
                 <p className='comment__name'>{name} <i>({new Date(createdAt?.toDate()).toUTCString()})</i> </p>
@@ -14,6 +14,6 @@ const Comment = ({text, createdAt, name, userPhoto, userEmail}) => {
           
         </div>
     )
-}
+})
 
 export default Comment

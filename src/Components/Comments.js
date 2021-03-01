@@ -6,6 +6,7 @@ import Comment from './Comment';
 import { useAuth } from '../contextAPI/userAuthContext'
 import { projectFirestore } from '../Config/firebase';
 import firebase from 'firebase';
+import FlipMove from 'react-flip-move'
 
 const Comments = ({feedItemId}) => {
     const { currentUser } = useAuth()
@@ -58,6 +59,7 @@ const Comments = ({feedItemId}) => {
             </div>
            
             <div className="comments__body">
+                <FlipMove>
                 {comments.map((comment) => {
                     // const {text, createdAt, name, userPhoto, userEmail} = comment.data
                         return (
@@ -65,6 +67,7 @@ const Comments = ({feedItemId}) => {
                         )
                     }
                 )}
+                </FlipMove>
             </div>
         </div>
     )
