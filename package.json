@@ -2,7 +2,7 @@
   "name": "linkedin-webapp-clone",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://nurmalee.github.io/linkedin-webapp-clone/",
+  "homepage": "http://nurmalee.github.io/linkedIn-webapp-clone/",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
