@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/linkedin-webapp-clone/static/css/main.b82ec2fe.chunk.css",
+    "main.js": "/linkedin-webapp-clone/static/js/main.2636f446.chunk.js",
+    "main.js.map": "/linkedin-webapp-clone/static/js/main.2636f446.chunk.js.map",
+    "runtime-main.js": "/linkedin-webapp-clone/static/js/runtime-main.387576a2.js",
+    "runtime-main.js.map": "/linkedin-webapp-clone/static/js/runtime-main.387576a2.js.map",
+    "static/js/2.3372e440.chunk.js": "/linkedin-webapp-clone/static/js/2.3372e440.chunk.js",
+    "static/js/2.3372e440.chunk.js.map": "/linkedin-webapp-clone/static/js/2.3372e440.chunk.js.map",
+    "static/js/3.3aa306ac.chunk.js": "/linkedin-webapp-clone/static/js/3.3aa306ac.chunk.js",
+    "static/js/3.3aa306ac.chunk.js.map": "/linkedin-webapp-clone/static/js/3.3aa306ac.chunk.js.map",
+    "index.html": "/linkedin-webapp-clone/index.html",
+    "static/css/main.b82ec2fe.chunk.css.map": "/linkedin-webapp-clone/static/css/main.b82ec2fe.chunk.css.map",
+    "static/js/2.3372e440.chunk.js.LICENSE.txt": "/linkedin-webapp-clone/static/js/2.3372e440.chunk.js.LICENSE.txt",
+    "static/media/linkedin-logo-png-1840.a1932ea6.png": "/linkedin-webapp-clone/static/media/linkedin-logo-png-1840.a1932ea6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.387576a2.js",
+    "static/js/2.3372e440.chunk.js",
+    "static/css/main.b82ec2fe.chunk.css",
+    "static/js/main.2636f446.chunk.js"
+  ]
+}
