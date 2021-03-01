@@ -4,6 +4,7 @@ import FeedItem from './FeedItem';
 import FeedInputForm from './FeedInputForm';
 import { projectFirestore } from '../Config/firebase';
 import { useAuth } from '../contextAPI/userAuthContext'
+import FlipMove from 'react-flip-move'
 
 const Feed = () => {
     const [feed, setFeed] = useState([]);
@@ -39,7 +40,9 @@ const Feed = () => {
                 <FeedInputForm postButton={postButton} />
             </div>
 
+         
             <div className="post__body">
+            <FlipMove>
                 {feed.map(feedItem => {
                     const {name, text, createdAt, photoId, userPhoto, userEmail} = feedItem.data
                         return (
@@ -47,7 +50,9 @@ const Feed = () => {
                         )
                     }
                 )}
+            </FlipMove>
             </div>
+          
             
         </section>
     )

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, forwardRef } from 'react'
 import './FeedItem.css';
 // import nurmalee_pics from './app-logo/nurmalee__linkedIn.jpg';
 import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
@@ -9,7 +9,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import Avatar from '@material-ui/core/Avatar';
 import Comments from './Comments.js' 
 
-const FeedItem = ({name, text, postButton, createdAt, photoId, feedItemId, userPhoto, userEmail}) => {
+const FeedItem = forwardRef(({name, text, postButton, createdAt, photoId, feedItemId, userPhoto, userEmail}, ref) => {
     const [likes, setLikes] = useState(null);
     const [showLikes, setShowLikes] = useState(false);
     const [showCommentBox, setShowCommentBox] = useState(false);
@@ -28,7 +28,7 @@ const FeedItem = ({name, text, postButton, createdAt, photoId, feedItemId, userP
     }
 
     return (
-        <section className='feedItem'>
+        <section ref={ref} className='feedItem'>
             <div className="feedItem__header">
                 <Avatar src={userPhoto} className="feedItem__header-pics"> {userEmail[0]} </Avatar>
                 <div className="feedItem__header-title">
@@ -67,6 +67,6 @@ const FeedItem = ({name, text, postButton, createdAt, photoId, feedItemId, userP
             
         </section>
     )
-}
+})
 
 export default FeedItem
