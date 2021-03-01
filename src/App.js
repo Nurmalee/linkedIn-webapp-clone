@@ -5,7 +5,7 @@ import Dashboard from './Components/Dashboard';
 import SignUp from './Components/SignUp';
 import ResetPassword from './Components/ResetPassword';
 import { UserAuthProvider } from './contextAPI/userAuthContext'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import PrivateRoute from "./Components/PrivateRoute";
 
 function App() {
