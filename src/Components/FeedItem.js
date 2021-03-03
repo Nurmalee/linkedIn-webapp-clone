@@ -38,7 +38,7 @@ const FeedItem = forwardRef(({name, text, postButton, createdAt, photoId, feedIt
                 </div>
             </div>
 
-            <p className="feedItem__textInput">{text}</p>
+            {text && <p className="feedItem__textInput">{text}</p>}
             
             {photoId && 
                 <div className="feedItem__image">

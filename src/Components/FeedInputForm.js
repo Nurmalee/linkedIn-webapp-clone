@@ -25,33 +25,6 @@ const FeedInputForm = ({postButton}) => {
         e.preventDefault()
 
         if(input || imageFile){
-            // const projectStorageRef = projectStorage.ref('images').child(imageFile?.name) //OR in ES6 format? projectStorage.ref(`images/${imageFile.name}`)
-            // projectStorageRef.put(imageFile).on('state_changed', 
-            // (snapshot) => {
-            //     const percentageUpload = (snapshot.bytesTransferred/snapshot.totalBytes) * 100
-            //     setUploadProgress(percentageUpload)
-            // }, (error) => {
-            //     console.log(error)
-            // }, async () => {
-            //     const url = await projectStorageRef.getDownloadURL()
-    
-                projectFirestore.collection('feed').add({
-                    name: currentUser?.displayName,
-                    userPhoto: currentUser?.photoURL,
-                    userEmail: currentUser?.email,
-                    text: input,
-                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-                    photoId: imageUrl,
-                })
-                setInput('');
-                setUploadProgress(0);
-                setImageFile(null)
-                setImageUrl('')
-        }
-    }
-
-    const handlePictureStorage = () => {
-        if(imageFile){
             const projectStorageRef = projectStorage.ref('images').child(imageFile?.name) //OR in ES6 format? projectStorage.ref(`images/${imageFile.name}`)
             projectStorageRef.put(imageFile).on('state_changed', 
             (snapshot) => {
@@ -61,12 +34,49 @@ const FeedInputForm = ({postButton}) => {
                 console.log(error)
             }, async () => {
                 const url = await projectStorageRef.getDownloadURL()
-                setImageUrl(url)
+
+                projectFirestore.collection('feed').add({
+                    name: currentUser?.displayName,
+                    userPhoto: currentUser?.photoURL,
+                    userEmail: currentUser?.email,
+                    text: input,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    // photoId: imageUrl,
+                    photoId: url,
+                })
+                setInput('');
+                setUploadProgress(0);
+                setImageFile(null)
+            })     
+        } else if (input && !imageFile) {
+            projectFirestore.collection('feed').add({
+                name: currentUser?.displayName,
+                userPhoto: currentUser?.photoURL,
+                userEmail: currentUser?.email,
+                text: input,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             })
-        } else {
-            return;
+            setInput('');
         }
     }
+
+    // const handlePictureStorage = () => {
+    //     if(imageFile){
+    //         const projectStorageRef = projectStorage.ref('images').child(imageFile?.name) //OR in ES6 format? projectStorage.ref(`images/${imageFile.name}`)
+    //         projectStorageRef.put(imageFile).on('state_changed', 
+    //         (snapshot) => {
+    //             const percentageUpload = (snapshot.bytesTransferred/snapshot.totalBytes) * 100
+    //             setUploadProgress(percentageUpload)
+    //         }, (error) => {
+    //             console.log(error)
+    //         }, async () => {
+    //             const url = await projectStorageRef.getDownloadURL()
+    //             setImageUrl(url)
+    //         })
+    //     } else {
+    //         return;
+    //     }
+    // }
 
     const handlePictureSelection = (e) => {
         let selectedImage = e.target.files[0]
@@ -94,8 +104,9 @@ const FeedInputForm = ({postButton}) => {
                     </label> */}
                     </div>
                
-                    {/* <button type="submit" style={{display: "none" }}>POST</button> */}
+                    {/* <button type="submit" className='post__input-postButton'>POST</button> */}
                 </form>
+                <button className='post__input-postButton' onClick={handleFeedUpdate} >POST</button>
             </div>
         </div>
 
@@ -109,13 +120,13 @@ const FeedInputForm = ({postButton}) => {
                 </div>
             </label>
 
-            <div className="post__button" onClick={handlePictureStorage}>
+            {/* <div className="post__button" onClick={handlePictureStorage}>
                     <ImageIcon className="post__button-Icon" style={{color: 'darkblue'}} />
                     <h3>Upload Image</h3>
-            </div>
+            </div> */}
            
             {/* {postButton((ImageIcon), "Photo")} */}
-            {/* {postButton((VideoLibraryIcon), "Video", 'lightgreen')} */}
+            {postButton((VideoLibraryIcon), "Video", 'lightgreen')}
             {postButton((EventIcon), "Event", 'orange')}
             {postButton((AssignmentIcon), "Write Article", 'brown')}
         </div>
