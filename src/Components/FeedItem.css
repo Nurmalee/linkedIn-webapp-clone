@@ -9,12 +9,14 @@
 
 .feedItem__textInput {
     padding: 10px;
+    padding-bottom: 0;
     font-size: 12px;
     text-align: justify;
 }
 
 .feedItem__image img{
     object-fit: contain;
+    padding-top: 10px;
     width: 100%;
 }
 
