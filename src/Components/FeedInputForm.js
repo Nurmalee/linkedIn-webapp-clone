@@ -17,7 +17,7 @@ const FeedInputForm = ({postButton}) => {
     const [input, setInput] = useState('');
     const [imageFile, setImageFile] = useState(null);
     const [uploadProgress, setUploadProgress] = useState(0)
-    const [imageUrl, setImageUrl] = useState('')
+    // const [imageUrl, setImageUrl] = useState('')
 
     const imageTypes = ['image/png', 'image/jpeg', 'image/jpg', 'image/JPG', 'image/JPEG', 'image/PNG']
     
@@ -57,6 +57,8 @@ const FeedInputForm = ({postButton}) => {
                 createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             })
             setInput('');
+        } else {
+            return;
         }
     }
 
@@ -92,7 +94,7 @@ const FeedInputForm = ({postButton}) => {
         <>
         <div className='postInput__container'>
         <div className="post__input">
-            <Avatar src={currentUser && currentUser.photoURL} style={{marginRight: '7px', height: '50px', width: '50px'}} />
+            <Avatar src={currentUser && currentUser.photoURL} style={{marginRight: '7px', height: '50px', width: '50px'}}> {currentUser.email[0]} </Avatar> 
             <div className="post__formContainer">
                 <CreateIcon />
                 <form onSubmit={handleFeedUpdate}>
